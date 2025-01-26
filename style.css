@@ -7,7 +7,7 @@
 :root{
     --yellow: hsl(47, 88%, 63%);
     --white: hsl(0, 0%, 100%);
-    --light-gray: hsl(0, 0%, 42%);
+    --light-gray: hsl(0, 0%, 37%);
     --black: hsl(0, 0%, 7%);
     --paragraph: 14px;
 }
@@ -24,12 +24,16 @@ body {
     width: 100%;
     max-width: 376px;
     background-color: var(--white);
-    padding: 1.60rem;
+    padding: 1.2rem; /* reduced the padding */
     border-radius: 1.1rem;
     box-shadow: 10px 10px 0px var(--black);
     margin: 2rem auto;
     outline: 1px solid #000;
-    height: calc(68vh - 1px);
+    height: auto; /* changed the height to auto */
+
+    /* added width contraints to stop shrinking below 375px */
+
+    min-width: 375px;
 }
 
 img {
@@ -67,26 +71,26 @@ img {
     font-size: var(--paragraph);
     margin-top: 0.8rem;
     color: var(--light-gray);
+    margin-block-end: 11px;
 }
+
+/* removed .end, .greg selectors, this is mine */
 
 .end {
-    margin-top: 0.5rem;
-    display:flex;
-    justify-content: left;
+    display: flex;
     align-items: center;
+    gap: .8rem;
 }
 
-.end .greg {
-    margin-top: 1rem;
-    width: 10%;
+.greg {
+    width: 50px; /* added width to decrease img size */
+    margin: 0; /* removed margin, thats why you had to use padding to center the text with the image */
 }
 
-.end p {
-    padding-left: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    font-weight: bold;
- }
+.end > p {
+    font-weight: 700; /* added font-weight */
+}
+
 .attribution {
     font-size: 11px; text-align: center; 
 }
